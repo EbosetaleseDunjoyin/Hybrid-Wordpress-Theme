@@ -1,0 +1,23 @@
+.widget{
+    ul li{
+        padding: 0.2em 0;
+    }
+}
+
+.widget_search,
+.search-field{
+    width: 100%;
+}
+
+
+.search-form{
+    position: relative;
+
+    label{
+        display: inline;
+    }
+    input{
+        padding: 0.5rem;
+    }
+}
+

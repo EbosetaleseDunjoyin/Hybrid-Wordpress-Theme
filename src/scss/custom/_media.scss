@@ -1,0 +1,21 @@
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+    height: auto;
+}
+
+img{
+    height:auto;
+    max-width: 100%;
+}
+
+a{
+    img{
+        &:hover{
+            opacity: 0.8;
+            transition: all .3s ease;
+        }
+    }
+}

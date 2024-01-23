@@ -1,0 +1,24 @@
+.header-image{
+    img{
+        width: 100%;
+        height: auto;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(37,46,53,0.7);
+    }
+}
+
+//Menus
+.navbar-toggler{
+    border: none;
+}
+
+#secondary .nav{
+    flex-direction: column !important;
+}

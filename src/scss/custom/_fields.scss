@@ -1,0 +1,18 @@
+
+input,
+textarea,
+select
+{
+    color: $mid_gray;
+    border: 1px solid $mid_gray;
+    width: 100%;
+    padding: 10px;
+
+    &:focus{
+        color: $dark_gray;
+    }
+}
+
+select{
+    border: 1px solid $dark_gray;
+}

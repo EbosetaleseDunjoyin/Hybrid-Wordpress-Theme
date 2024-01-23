@@ -1,0 +1,54 @@
+$white: #ffffff;
+$black: #000000;
+$red: #ff0000;
+$light_blue: #4fabff;
+$dark_blue: #0274be;
+$light_gray: #d3d3d3;
+$mid_gray: #343434;
+$dark_gray:#202529;
+
+
+
+
+.text-white{
+    color: $white;
+}
+.bg-white{
+    background-color: $white;
+}
+
+.text-black{
+    color: $black;
+}
+
+.bg-black{
+    background-color: $black;
+}
+
+.text-lblue{
+    color: $light_blue;
+}
+.bg-lblue{
+    background-color: $light_blue;
+}
+
+.text-dblue{
+    color: $dark_blue;
+}
+.dark-dblue{
+    color: $dark_blue;
+}
+
+.text-lgray{
+    color: $light_gray;
+}
+.bg-lgray{
+    background-color: $light_gray;
+}
+
+.text-dgray{
+    color: $dark_gray;
+}
+.dark-dgray{
+    color: $dark_gray;
+}
