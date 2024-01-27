@@ -38,7 +38,7 @@ if(!function_exists("devwp_customize_register")):
 			);
 		}
 
-		$wp_customize->get_section('header_image')->paanel = 'devwp_header_panel';
+		$wp_customize->get_section('header_image')->panel = 'devwp_header_panel';
 		$wp_customize->get_section('header_image')->active_callback = 'is_front_page';
 
 
@@ -219,7 +219,7 @@ if(!function_exists("devwp_customize_register")):
 		);
 
 		$wp_customize->add_control(
-			new WP_Customize_Control(
+			new WP_Customize_Image_Control(
 				$wp_customize,
 				'home_header_img',
 				array(
@@ -553,7 +553,13 @@ if(!function_exists("devwp_home_front")):
 	function devwp_home_front() : bool {
 
 		// return ((is_front_page() || is_home()) ? true : false);
-		return is_front_page() || is_home();
+		// return is_front_page() || is_home();
+
+		if(is_front_page() || is_home()){
+			return true;
+		}else{
+			return false;
+		}
 
 
 
