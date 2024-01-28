@@ -12,7 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		<div class="site-info text-center mt-3">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'devwp' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -22,7 +22,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'devwp' ), 'devwp', '<a href="http://underscores.me/">Underscores.me</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'devwp' ), 'DevWP', '<a href="https://eboseogbidi.netlify.app/">Ebosetalese Dunjoyin Ogbidi</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

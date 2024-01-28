@@ -9,6 +9,8 @@
  * @package DevWP
  */
 
+ if(!defined('ABSPATH')) exit;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -21,39 +23,28 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+
+	wp_body_open(); 
+	$devwp_nav_type = get_theme_mod('devwp_navbar_type', 'offcanvas');
+
+?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'devwp' ); ?></a>
-
+	
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$devwp_description = get_bloginfo( 'description', 'display' );
-			if ( $devwp_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $devwp_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'devwp' ); ?></a>
+		
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'devwp' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		<?php get_template_part('template-parts/navbar', $devwp_nav_type); ?>
 	</header><!-- #masthead -->
+
+	<?php
+
+	if(!is_front_page() && !is_home()):
+
+	?>
+
+		<div class="container">
+			<div id="content" class="row pt-4">
+		
+		<?php endif; ?>

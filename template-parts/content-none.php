@@ -6,8 +6,11 @@
  *
  * @package DevWP
  */
+if(!defined("ABSPATH")) exit;
 
 ?>
+
+
 
 <section class="no-results not-found">
 	<header class="page-header">

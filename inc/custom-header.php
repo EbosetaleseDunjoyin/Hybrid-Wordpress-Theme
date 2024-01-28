@@ -10,7 +10,7 @@
  *
  * @package DevWP
  */
-
+if(!defined("ABSPATH")) exit;
 /**
  * Set up the WordPress core custom header feature.
  *
@@ -24,9 +24,11 @@ function devwp_custom_header_setup() {
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
+				'width'              => 2560,
+				'height'             => 720,
 				'flex-height'        => true,
+				'flex-width'        => true,
+				'video'        => true,
 				'wp-head-callback'   => 'devwp_header_style',
 			)
 		)

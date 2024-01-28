@@ -31,7 +31,7 @@ if ( ! function_exists( 'devwp_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="posted-on"><i class="bi bi-clock  me-2"></i>' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -161,5 +161,44 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	 */
 	function wp_body_open() {
 		do_action( 'wp_body_open' );
+	}
+endif;
+
+if ( ! function_exists( 'devwp_post_nav' ) ) :
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function devwp_post_nav() {
+		$args = array(
+			'prev_text' => '<i class="bi bi-arrow-left"> </i>'. esc_html__(' Previous: %title', 'devwp'),
+			'next_text' => esc_html__(' Next: %title', 'devwp') .'<i class="bi bi-arrow-right"> </i>',
+			'screen_reader_text' => __('Posts navigation', 'devwp')
+
+		);
+
+		the_posts_pagination($args);
+
+		echo "<span class='clearfix'></span>";
+	}
+endif;
+if ( ! function_exists( 'devwp_pagination' ) ) :
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function devwp_pagination() {
+		$args = array(
+			'prev_text' => '<i class="bi bi-arrow-left"> </i>'. esc_html__(' Previous:', 'devwp'),
+			'next_text' => esc_html__(' Next:', 'devwp') .'<i class="bi bi-arrow-right"> </i>',
+			'screen_reader_text' => __('Posts navigation', 'devwp')
+
+		);
+
+		the_posts_pagination($args);
+
+		echo "<span class='clearfix'></span>";
 	}
 endif;

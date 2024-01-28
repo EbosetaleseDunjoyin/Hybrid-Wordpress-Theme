@@ -52,7 +52,7 @@ if(has_custom_header()){
                     while($devwp_custom_query->have_posts()):
                         $devwp_custom_query->the_post();
                         get_template_part('template-parts/content', get_post_type());
-                        echo 'hr';
+                        echo '<hr/>';
                     endwhile;
                     wp_reset_postdata();
                 endif;
